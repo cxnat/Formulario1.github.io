@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario de Inscripción</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#f5e6da,#f2d6c9,#eac1c1);
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* CONTENEDOR GENERAL */
+.contenedor-principal{
+display:flex;
+align-items:center;
+gap:25px;
+}
+
+/* COLUMNAS DE IMAGENES */
+.columna-imagenes{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.columna-imagenes img{
+width:160px;
+height:100px;
+object-fit:cover;
+border-radius:8px;
+box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* FORMULARIO */
+
+.formulario{
+background:#fff7f3;
+padding:20px;
+border-radius:10px;
+width:850px;
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+h2{
+text-align:center;
+color:#7a4e48;
+margin-bottom:15px;
+}
+
+.grid{
+display:grid;
+grid-template-columns: repeat(3, 1fr);
+gap:10px;
+}
+
+.campo{
+display:flex;
+flex-direction:column;
+}
+
+label{
+font-size:13px;
+font-weight:bold;
+color:#6b4a4a;
+}
+
+input, select{
+padding:6px;
+border-radius:5px;
+border:1px solid #d8b8a6;
+font-size:13px;
+}
+
+input:invalid{
+border:2px solid #e07474;
+}
+
+input:valid{
+border:2px solid #8bc48a;
+}
+
+.hobbies{
+grid-column: span 3;
+}
+
+.hobbies label{
+font-weight:normal;
+display:inline-block;
+margin-right:10px;
+font-size:13px;
+}
+
+.botones{
+text-align:center;
+margin-top:15px;
+}
+
+button{
+background:#c88f8f;
+color:white;
+border:none;
+padding:8px 16px;
+border-radius:6px;
+margin:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#a96f6f;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="contenedor-principal">
+
+<!-- IMAGENES IZQUIERDA -->
+<div class="columna-imagenes">
+
+<img src="img/img1.3.jpg">
+<img src="img/img1.2.jpg">
+<img src="img/img1.1.jpg">
+
+</div>
+
+
+<!-- FORMULARIO -->
+
+<div class="formulario">
+
+<h2>Inscribite aquí</h2>
+
+<form method="post">
+
+<div class="grid">
+
+<div class="campo">
+<label>Tipo de documento</label>
+<select name="tipo_documento" required>
+<option value="">Seleccione</option>
+<option>Cédula</option>
+<option>Tarjeta de Identidad</option>
+<option>Cédula de Extranjería</option>
+<option>Documento Extranjero</option>
+<option>Pasaporte</option>
+<option>Registro Civil</option>
+</select>
+</div>
+
+<div class="campo">
+<label>Número de documento</label>
+<input type="text"
+name="numero_documento"
+placeholder="Ej: 123456789"
+pattern="[0-9]{6,12}"
+title="Entre 6 y 12 números"
+required>
+</div>
+
+<div class="campo">
+<label>Sexo</label>
+<select name="sexo" required>
+<option value="">Seleccione</option>
+<option>Femenino</option>
+<option>Masculino</option>
+<option>Otro</option>
+</select>
+</div>
+
+<div class="campo">
+<label>Nombres</label>
+<input type="text"
+name="nombres"
+placeholder="Ej: María Fernanda"
+pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]{3,64}"
+required>
+</div>
+
+<div class="campo">
+<label>Apellidos</label>
+<input type="text"
+name="apellidos"
+placeholder="Ej: Gómez Pérez"
+pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]{3,64}"
+required>
+</div>
+
+<div class="campo">
+<label>Dirección</label>
+<input type="text"
+name="direccion"
+placeholder="Ej: Calle 10 #15-20"
+required>
+</div>
+
+<div class="campo">
+<label>Teléfono fijo</label>
+<input type="tel"
+name="telefono_fijo"
+placeholder="Ej: 3214567"
+pattern="[0-9]{7}"
+required>
+</div>
+
+<div class="campo">
+<label>Teléfono celular</label>
+<input type="tel"
+name="telefono_celular"
+placeholder="Ej: 3001234567"
+pattern="[0-9]{10}"
+required>
+</div>
+
+<div class="campo">
+<label>Correo electrónico</label>
+<input type="email"
+name="correo"
+placeholder="Ej: usuario@email.com"
+required>
+</div>
+
+<div class="campo">
+<label>Usuario</label>
+<input type="text"
+name="usuario"
+placeholder="Ej: Natalia23"
+pattern="[A-Za-z]{3,14}[0-9]{0,2}"
+required>
+</div>
+
+<div class="campo">
+<label>Contraseña</label>
+<input type="password"
+name="contrasena"
+placeholder="16 caracteres requeridos"
+pattern="(?=.*[A-Z])(?=(?:.*[a-z]){2,})(?=(?:.*[0-9]){5,})(?=.*[!?\-+/&$])[A-Za-z0-9!?\-+/&$]{16}"
+required>
+</div>
+
+<div class="campo">
+<label>Fecha inscripción</label>
+<input type="date"
+name="fecha_inscripcion"
+min="2026-02-15"
+max="2026-03-06"
+required>
+</div>
+
+<div class="campo hobbies">
+
+<label>Hobbies (puede seleccionar uno o varios)</label>
+
+<label><input type="checkbox" name="hobbies[]" value="leer"> Leer</label>
+<label><input type="checkbox" name="hobbies[]" value="cantar"> Cantar</label>
+<label><input type="checkbox" name="hobbies[]" value="bailar"> Bailar</label>
+<label><input type="checkbox" name="hobbies[]" value="gym"> Gym</label>
+<label><input type="checkbox" name="hobbies[]" value="deporte"> Practicar deporte</label>
+<label><input type="checkbox" name="hobbies[]" value="peliculas"> Ver películas</label>
+<label><input type="checkbox" name="hobbies[]" value="dormir"> Dormir</label>
+
+</div>
+
+</div>
+
+<div class="botones">
+<button type="submit">Enviar</button>
+<button type="reset">Limpiar</button>
+</div>
+
+</form>
+
+</div>
+
+
+<!-- IMAGENES DERECHA -->
+
+<div class="columna-imagenes">
+
+<img src="img/img1.1.jpg">
+<img src="img/img1.2.jpg">
+<img src="img/img1.3.jpg">
+
+</div>
+
+</div>
+
+</body>
+</html>
