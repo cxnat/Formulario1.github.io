@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Registro de Usuario - Recordamed</title>
+</head>
+
+<body>
+
+<h2>Registro de Enfermero</h2>
+
+<form method="post">
+
+<!-- Tipo de documento -->
+<label>Tipo de documento:</label><br>
+<select name="tipo_documento" required>
+    <option value="">Seleccione</option>
+    <option>Cédula</option>
+    <option>Tarjeta de identidad</option>
+    <option>Cédula de extranjería</option>
+    <option>Documento extranjero</option>
+    <option>Pasaporte</option>
+    <option>Registro civil</option>
+</select><br><br>
+
+<!-- Documento -->
+<label>Número de documento:</label><br>
+<input type="text" name="documento"
+pattern="[0-9]+"
+placeholder="Solo números"
+required><br><br>
+
+<!-- ID trabajador -->
+<label>ID o PIN trabajador:</label><br>
+<input type="text" name="pin"
+pattern="[A-Za-z0-9]+"
+placeholder="Ej: ENF1023"
+required><br><br>
+
+<!-- Nombre -->
+<label>Nombre:</label><br>
+<input type="text" name="nombre"
+pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+"
+placeholder="Solo letras"
+required><br><br>
+
+<!-- Apellidos -->
+<label>Apellidos:</label><br>
+<input type="text" name="apellido"
+pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+"
+required><br><br>
+
+<!-- Sexo -->
+<label>Sexo:</label><br>
+<select name="sexo" required>
+    <option value="">Seleccione</option>
+    <option>Femenino</option>
+    <option>Masculino</option>
+    <option>Otro</option>
+</select><br><br>
+
+<!-- Dirección -->
+<label>Dirección:</label><br>
+<input type="text" name="direccion" required><br><br>
+
+<!-- Correo -->
+<label>Correo:</label><br>
+<input type="email" name="correo" required><br><br>
+
+<!-- Teléfono -->
+<label>Teléfono:</label><br>
+<input type="tel" name="telefono"
+pattern="[0-9]{10}"
+placeholder="10 números"
+required><br><br>
+
+<!-- Especialidad -->
+<label>Especialidad:</label><br>
+<input type="text" name="especialidad" required><br><br>
+
+<!-- Registro profesional -->
+<label>Número de Registro Profesional:</label><br>
+<input type="text" name="registro"
+required><br><br>
+
+<!-- Usuario -->
+<label>Usuario:</label><br>
+<input type="text" name="usuario"
+pattern="[A-Za-z0-9_]+"
+required><br><br>
+
+<!-- Contraseña -->
+<label>Contraseña:</label><br>
+<input type="password" name="password"
+pattern=".{6,}"
+placeholder="Mínimo 6 caracteres"
+required><br><br>
+
+<!-- Confirmar contraseña -->
+<label>Confirmar contraseña:</label><br>
+<input type="password" name="confirmar"
+pattern=".{6,}"
+required><br><br>
+
+<!-- Botones -->
+<button type="submit">Enviar</button>
+<button type="reset">Borrar</button>
+
+</form>
+
+</body>
+</html>
