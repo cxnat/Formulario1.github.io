@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Inscripción</title>
+</head>
+
+<body>
+
+    <h2>Formulario de Inscripción</h2>
+
+    <form method="post">
+
+        <!-- Tipo de documento -->
+        <label>Tipo de documento:</label><br>
+        <select name="tipo_documento" required>
+            <option value="">Seleccione</option>
+            <option>Cédula</option>
+            <option>Tarjeta de Identidad</option>
+            <option>Cédula de Extranjería</option>
+            <option>Documento Extranjero</option>
+            <option>Pasaporte</option>
+            <option>Registro Civil</option>
+        </select><br><br>
+
+        <!-- Número de documento -->
+        <label>Número de documento:</label><br>
+        <input type="text" name="numero_documento"
+        pattern="[0-9]{6,12}"
+        placeholder="Solo números (6 a 12)"
+        required><br><br>
+
+        <!-- Sexo -->
+        <label>Sexo:</label><br>
+        <select name="sexo" required>
+            <option value="">Seleccione</option>
+            <option>Femenino</option>
+            <option>Masculino</option>
+            <option>Otro</option>
+        </select><br><br>
+
+        <!-- Nombres -->
+        <label>Nombres:</label><br>
+        <input type="text" name="nombres"
+        pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]{3,64}"
+        placeholder="Solo letras"
+        required><br><br>
+
+        <!-- Apellidos -->
+        <label>Apellidos:</label><br>
+        <input type="text" name="apellidos"
+        pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]{3,64}"
+        required><br><br>
+
+        <!-- Dirección -->
+        <label>Dirección:</label><br>
+        <input type="text" name="direccion" required><br><br>
+
+        <!-- Teléfono fijo -->
+        <label>Teléfono fijo:</label><br>
+        <input type="tel" name="telefono_fijo"
+        pattern="[0-9]{7}"
+        placeholder="7 números"
+        required><br><br>
+
+        <!-- Celular -->
+        <label>Teléfono celular:</label><br>
+        <input type="tel" name="telefono_celular"
+        pattern="[0-9]{10}"
+        placeholder="10 números"
+        required><br><br>
+
+        <!-- Correo -->
+        <label>Correo electrónico:</label><br>
+        <input type="email" name="correo" required><br><br>
+
+        <!-- Usuario -->
+        <label>Usuario:</label><br>
+        <input type="text" name="usuario"
+        pattern="[A-Za-z]{3,14}[0-9]{0,2}"
+        placeholder="Ej: Natalia23"
+        required><br><br>
+
+        <!-- Contraseña -->
+        <label>Contraseña:</label><br>
+        <input type="password" name="contrasena"
+        pattern="(?=.*[A-Z])(?=(?:.*[a-z]){2,})(?=(?:.*[0-9]){5,})(?=.*[!?\-+/&$])[A-Za-z0-9!?\-+/&$]{16}"
+        placeholder="16 caracteres"
+        required><br><br>
+
+        <!-- Fecha -->
+        <label>Fecha de inscripción:</label><br>
+        <input type="date" name="fecha_inscripcion"
+        min="2026-02-15"
+        max="2026-03-06"
+        required><br><br>
+
+        <!-- Hobbies -->
+        <label>Hobbies:</label><br>
+        <input type="checkbox" name="hobbies[]" value="leer"> Leer<br>
+        <input type="checkbox" name="hobbies[]" value="cantar"> Cantar<br>
+        <input type="checkbox" name="hobbies[]" value="bailar"> Bailar<br>
+        <input type="checkbox" name="hobbies[]" value="gym"> Gym<br>
+        <input type="checkbox" name="hobbies[]" value="deporte"> Deporte<br>
+        <input type="checkbox" name="hobbies[]" value="peliculas"> Películas<br>
+        <input type="checkbox" name="hobbies[]" value="dormir"> Dormir<br><br>
+
+        <!-- Botones -->
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpiar</button>
+
+    </form>
+
+</body>
+</html>
